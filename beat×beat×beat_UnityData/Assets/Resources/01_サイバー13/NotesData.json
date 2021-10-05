@@ -1,0 +1,60 @@
+{
+    "songName": "サイバー13",
+    "bpm": 106,
+    "startTime": 2.42,
+    "endTime": 78,
+    "notes": [
+        {
+            "timing": 18.2690566037736,
+            "lineNum": 3
+        },
+        {
+            "timing": 20.53320755,
+            "lineNum": 2
+        },
+        {
+            "timing": 22.797358490566,
+            "lineNum": 1
+        },
+        {
+            "timing": 25.06150943,
+            "lineNum": 0
+        },
+        {
+            "timing": 36.38226415,
+            "lineNum": 4
+        },
+        {
+            "timing": 38.64641509,
+            "lineNum": 4
+        },
+        {
+            "timing": 40.91056604,
+            "lineNum": 4
+        },
+        {
+            "timing": 43.17471698,
+            "lineNum": 4
+        },
+        {
+            "timing": 74.8728301886793,
+            "lineNum": 3
+        },
+        {
+            "timing": 75.4388679245283,
+            "lineNum": 2
+        },
+        {
+            "timing": 76.0049056603774,
+            "lineNum": 1
+        },
+        {
+            "timing": 76.5709433962264,
+            "lineNum": 0
+        },
+        {
+            "timing": 77.1369811320755,
+            "lineNum": 4
+        }
+    ]
+}

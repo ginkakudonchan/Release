@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: db13329e673a9884986076be66e3762f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Mplus Code Latin 50
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f65b547a273a68b4f9d13f7719a64358, type: 3}
+  - {fileID: 12800000, guid: c5af17e02439e50469ad796a70079bff, type: 3}
+  - {fileID: 12800000, guid: 77dc8b7cf66f15f4cb4a125154843feb, type: 3}
+  - {fileID: 12800000, guid: d6e95e6c1db37a84285bd57e7775aa31, type: 3}
+  - {fileID: 12800000, guid: 7b2f0277cf15a7e43970cc001e9c85d3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
