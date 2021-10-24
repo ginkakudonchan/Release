@@ -88,6 +88,16 @@ public class GameUtil : MonoBehaviour
                 return keyCode[3];
             case 4:
                 return keyCode[4];
+            case 5:
+                return keyCode[0];
+            case 6:
+                return keyCode[1];
+            case 7:
+                return keyCode[2];
+            case 8:
+                return keyCode[3];
+            case 9:
+                return keyCode[4];
             default:
                 return KeyCode.None;
         }

@@ -1207,6 +1207,11 @@ MonoBehaviour:
   - {fileID: 6834505620957573356, guid: 7c7f1e6fe53fb3744b3fb38dbb0a1390, type: 3}
   - {fileID: 3621026866785100817, guid: 05e169ede5f32344c93a585a415e14f2, type: 3}
   - {fileID: 8270114708707436070, guid: 664ab400f4b92514b8e0eb27a7486879, type: 3}
+  - {fileID: 6882078898996514019, guid: 523b3b1fa3d2adb4ead4f6f4e4f9cd8f, type: 3}
+  - {fileID: 3807295931834887847, guid: d90a9d9716f4d704c879e065750923c2, type: 3}
+  - {fileID: 3819267642545448058, guid: 944424a3b65e5e1409d3ae6a30e70321, type: 3}
+  - {fileID: 2307171410832127043, guid: 9fb321418a99df74b94cfa9bcb08693c, type: 3}
+  - {fileID: 3070790191122068922, guid: 00ba724d31aad7d429b9b05720ca427f, type: 3}
   timeOffsetText: {fileID: 1185352334}
   objectOffsetText: {fileID: 50653214}
   barLine: {fileID: 284888484846675638, guid: a52b853ff4dd72840a056158d5173178, type: 3}

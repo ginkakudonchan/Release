@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EE8154EB-991C-A4A1-9B98-7F40529D5B55}</ProjectGuid>
+    <ProjectGuid>{437E32FD-B52C-9DA0-17BA-11E36310DED4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Timeline</AssemblyName>
@@ -697,12 +697,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{C281E344-DA4E-9320-0509-81E6EF591AA4}</Project>
+      <Project>{09EB6C2B-E23F-431B-2DA2-1457B75C7EBE}</Project>
       <Name>UnityEditor.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{AC048115-68B2-B6DB-C483-4788C368915D}</Project>
+      <Project>{3AD484C0-AE65-33AC-17E5-311B65054B43}</Project>
       <Name>UnityEngine.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: "\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8"
+  m_Title: "\u30D2\u30A8\u30E9\u30EB\u30AD\u30FC"
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,10 +121,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 910, y: 442}
-  m_MaxSize: {x: 22005, y: 10021}
+  m_MinSize: {x: 911, y: 421}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 72
+  controlID: 853
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,10 +146,10 @@ MonoBehaviour:
     y: 0
     width: 747
     height: 947
-  m_MinSize: {x: 201, y: 442}
-  m_MaxSize: {x: 4001, y: 8042}
+  m_MinSize: {x: 201, y: 421}
+  m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 137
+  controlID: 878
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -274,8 +274,8 @@ MonoBehaviour:
     y: 0
     width: 394
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -406,9 +406,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -70.01891, y: -25.094006, z: 90}
+    m_Target: {x: 0, y: 1.7550169, z: 0}
     speed: 2
-    m_Value: {x: 212.70813, y: 184.12473, z: 17.359348}
+    m_Value: {x: 0, y: 1.7550169, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -455,13 +455,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.31792286, y: -0.049744777, z: -0.016706849, w: 0.946667}
+    m_Target: {x: -0.5049676, y: -0.05172539, z: -0.030334275, w: 0.86105454}
     speed: 2
-    m_Value: {x: -0.30527613, y: 0.31727698, z: 0.108674414, w: 0.89125293}
+    m_Value: {x: -0.50496686, y: -0.051725317, z: -0.030334232, w: 0.8610533}
   m_Size:
-    m_Target: 42.781254
+    m_Target: 28.596237
     speed: 2
-    m_Value: 156.3012
+    m_Value: 28.596237
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -577,7 +577,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 94f6ffff84faffff56fbffffe23e0000f8400000ea410000
+      m_ExpandedIDs: b0dceaffd2dceaffccddeaff0cdeeaff1adeeaff20dfeaff30dfeaff52e0eaff60e0eaffe2efeaff04f0eaff06f0eaff42f0eaff46f0eaff44f1eaff48f1eaff54f2eaff62f2eaff00f6eaff22f6eaff1cf7eaff5cf7eaff6af7eaff70f8eaff80f8eaffa2f9eaffb0f9eaff56fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -639,22 +639,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fonts/ttf
+    - Assets/Resources/Config
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Fonts/ttf
+  - Assets/Resources/Config
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: "C:\\USB\u30C7\u30FC\u30BF\\Ultra\\\u5927\u5B66\u9662\\unity\\\u97F3\u30B2_ver.1.01"
+  m_LastProjectPath: "C:\\USB\u30C7\u30FC\u30BF\\Ultra\\\u5927\u5B66\u9662\\unity\\GitHub\\Release\\beat\xD7beat\xD7beat_UnityData"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c43d0000
-    m_LastClickedID: 15812
-    m_ExpandedIDs: 000000006a3d00006c3d0000763d000000ca9a3b
+    m_SelectedIDs: b63d0000
+    m_LastClickedID: 15798
+    m_ExpandedIDs: 00000000723d0000743d0000763d0000783d00007a3d00007c3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -682,7 +682,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006a3d00006c3d00006e3d0000703d0000
+    m_ExpandedIDs: 00000000723d0000743d0000763d0000783d00007a3d00007c3d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,15 +713,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: ec500000bc5a000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: "01_\u30B5\u30A4\u30D0\u30FC13"
-      m_OriginalName: "01_\u30B5\u30A4\u30D0\u30FC13"
+      m_Name: FirstGameFlag
+      m_OriginalName: FirstGameFlag
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15748
+      m_UserData: 15646
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0

@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{007B8C82-113C-7642-47E9-89CBA0880744}</ProjectGuid>
+    <ProjectGuid>{2ED4C22B-7041-F97C-179F-2C33F7D3F97B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Timeline</AssemblyName>
@@ -313,7 +313,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -663,7 +663,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{AC048115-68B2-B6DB-C483-4788C368915D}</Project>
+      <Project>{3AD484C0-AE65-33AC-17E5-311B65054B43}</Project>
       <Name>UnityEngine.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

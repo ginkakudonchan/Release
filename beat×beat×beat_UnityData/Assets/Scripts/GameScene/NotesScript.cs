@@ -27,21 +27,20 @@ public class NotesScript : MonoBehaviour
     void MoveNotes(float notesSpeed)
     {
         this.transform.position += Vector3.down * notesSpeed * Time.deltaTime;
-        if (this.transform.position.y < -0.2f * notesSpeed)
+        // ノーツが消えるのはゲームシーンのみ、あれチュートリアルは？
+        // ノーツが通り過ぎたら、missLateカウント
+        if (TitleScene.gameSceneFlag && this.transform.position.y < -0.2f * notesSpeed)
         {
-            if (TitleScene.gameSceneFlag)
-            {
-                // count;; 0:missEarly, 1:goodEarly, 2:greatEarly, 3:perfect, 4:greatLate, 5:goodLate, 6:missLate
-                // errorLateは必ず要素数の最後
-                JudgeDisplay.count[JudgeDisplay.count.Length - 1]++;
-                GameController._combo = 0;
-                GameController._comboEffectLimit = 10;
-                this.gameObject.SetActive(false);
-                GameController.nowNotesNum++;
-            }
+            // count;; 0:missEarly, 1:goodEarly, 2:greatEarly, 3:perfect, 4:greatLate, 5:goodLate, 6:missLate
+            // missLateは必ず要素数の最後（JudgeDisplay.count.Length - 1）
+            JudgeDisplay.count[JudgeDisplay.count.Length - 1]++;
+            GameController._combo = 0;
+            GameController._comboEffectLimit = 10;
+            this.gameObject.SetActive(false);
         }
     }
 
+    // EditMode専用の処理
     void MoveStopNotes(float notesSpeed, int endBarLineNum)
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && bar < endBarLineNum)

@@ -13,11 +13,11 @@ public class EditController : MonoBehaviour
     public static string songName;
 
     public GameObject[] notes;
-    public static float[] _timing;
-    public static int[] _lineNum;
+    private Notes[] notesData;  // ノーツの始点時間、ノーツ番号を格納
+    private LongNotes[] longNotesData;  // ロングノーツの始点時間と終点時間、ノーツ番号を格納
 
     public static string notesFilePath;
-    private int _notesCount = 0;
+    private bool[] longNotesCountFlag; // ロングノーツ用、譜面を作りやすくするために用意
     public static float _startTime;
 
     // オフセット、Earlyの時にプラス、Lateの時にマイナス方向に設定する
@@ -43,6 +43,7 @@ public class EditController : MonoBehaviour
     public static string audioFilePath;
 
     List<NotesScript> Notes = new List<NotesScript>();
+    List<LongNotesScript> LongNotes = new List<LongNotesScript>();  // ロングノーツ用
     List<BarLineScript> BarLines = new List<BarLineScript>();
 
     public static float notesSpeed;
@@ -56,8 +57,8 @@ public class EditController : MonoBehaviour
 
             // static変数の初期化
             _isPlaying = false;
-            _timing = new float[2048];
-            _lineNum = new int[2048];
+            notesData = new Notes[2048];    // 構造体
+            longNotesData = new LongNotes[2048];    // 構造体
             _startTime = 0;
             bar = 0;
             barTiming = 0;
@@ -142,6 +143,7 @@ public class EditController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) || !_audioSource.isPlaying)
             {
                 RestartEdit();
+
             }
 
             // キー入力
@@ -175,10 +177,20 @@ public class EditController : MonoBehaviour
     void SpawnNotes_BarLine()
     {
         // ノーツ生成
-        while (_timing[_notesCount] != 0)
+        int notesCount = 0;
+        while (notesData[notesCount].timing != 0)
         {
-            SpawnNotes(_lineNum[_notesCount]);
-            _notesCount++;
+            SpawnNotes(notesData[notesCount].lineNum, notesCount);
+            notesCount++;
+        }
+
+        // ロングノーツ生成
+        // _longTimingはロングノーツの始点時間のみが格納されている
+        int longNotesCount = 0;
+        while (longNotesData[longNotesCount].startTiming != 0)
+        {
+            SpawnLongNotes(longNotesData[longNotesCount].lineNum, longNotesCount);
+            longNotesCount++;
         }
 
         // 小節線生成
@@ -187,16 +199,18 @@ public class EditController : MonoBehaviour
         {
             SpawnBarLine();
             barCount++;
-            // 毎回barTimingを足すよりもこの方が精度が良いかも？
+            // 毎回barTimingを足すよりもこの方が精度良いかも？
             barLineTiming = barCount * barTiming + startBarLineTiming;
         }
         barLineTiming = startBarLineTiming;
     }
 
-    void SpawnNotes(int num)
+    void SpawnNotes(int num, int notesCount)
     {
+        // ノーツ生成の座標を決定
+        // num;; 0~3:ノーマルノーツ、4:スペシャルノーツ
         float positionX = 0.0f;
-        float positionY = (_timing[_notesCount] + objectOffset / 1000f) * notesSpeed;
+        float positionY = (notesData[notesCount].timing + objectOffset / 1000f) * notesSpeed;
         if (0 <= num && num <= 3)
         {
             positionX = -6.0f + (4.0f * num);
@@ -209,6 +223,32 @@ public class EditController : MonoBehaviour
 
         NotesScript n = Note.GetComponent<NotesScript>();
         Notes.Add(n);
+    }
+
+    void SpawnLongNotes(int num, int longNotesCount)
+    {
+        // ロングノーツ生成の座標を決定
+        // num;; 5~8:ノーマルロングノーツ、9:スペシャルロングノーツ
+        float positionX = 0.0f;
+        float positionY = ((longNotesData[longNotesCount].startTiming + objectOffset / 1000f)) * notesSpeed;
+        if (5 <= num && num <= 8)
+        {
+            positionX = -6.0f + (4.0f * (num - 5));
+        }
+
+        GameObject LongNote;
+        LongNote = Instantiate(notes[num],
+            new Vector3(positionX, positionY, 0),
+            Quaternion.identity) as GameObject;
+
+        // LongNoteオブジェクトの長さを変更する、LongNoteオブジェクトは譜面によって長さが違う
+        Vector3 dummy;
+        dummy = LongNote.transform.localScale;
+        dummy.y = dummy.y + (longNotesData[longNotesCount].endTiming - longNotesData[longNotesCount].startTiming) * notesSpeed;
+        LongNote.transform.localScale = dummy;
+
+        LongNotesScript ln = LongNote.GetComponent<LongNotesScript>();
+        LongNotes.Add(ln);
     }
 
     void SpawnBarLine()
@@ -241,7 +281,13 @@ public class EditController : MonoBehaviour
             endBarLineNum = int.Parse(values[1]);
 
             // 2行目以降、譜面データ読み取り
-            int i = 0;
+            int i = 0, j = 0, k = 0;
+            float[] longNotesStartTiming = new float[2048];
+            float[] longNotesEndTiming = new float[2048];
+            int[] longNotesStartLineNum = new int[2048];
+            int[] longNotesEndLineNum = new int[2048];
+            bool[] longNotesCountFlag = new bool[2048];
+
             while (reader.Peek() > -1)
             {
                 line = reader.ReadLine();
@@ -255,12 +301,57 @@ public class EditController : MonoBehaviour
                     var ret = int.TryParse(values[loop], out result);   // 整数の時true、小数や文字の時falseを返す
                     if (values[loop] != "" && ret == true)
                     {
-                        _timing[i] = float.Parse(values[0]);
-                        _lineNum[i] = int.Parse(values[loop]);
-                        i++;
+                        // ショートノーツかロングノーツか
+                        if (int.Parse(values[loop]) < 5)
+                        {
+                            // ショートノーツはこっち
+                            notesData[i] = new Notes(
+                                float.Parse(values[0]),
+                                int.Parse(values[loop])
+                            );
+                            i++;
+                        }
+                        else if (5 <= int.Parse(values[loop]) && int.Parse(values[loop]) < 10)
+                        {
+                            // ロングノーツ始点はこっち
+                            longNotesStartTiming[j] = float.Parse(values[0]);
+                            longNotesStartLineNum[j] = int.Parse(values[loop]);
+                            j++;
+                        }
+                        else if (10 <= int.Parse(values[loop]) && int.Parse(values[loop]) < 15)
+                        {
+                            // ロングノーツ終点はこっち
+                            longNotesEndTiming[k] = float.Parse(values[0]);
+                            longNotesEndLineNum[k] = int.Parse(values[loop]);
+                            k++;
+                        }
                     }
                     else
                     {
+                        break;
+                    }
+                }
+            }
+            // longNotesDataにロングノーツの始点時間、終点時間、ノーツ番号をインデックス順に格納
+            for (int index = 0; 0 < longNotesStartTiming[index]; index++)
+            {
+                for (int _index = 0; 0 < longNotesEndTiming[_index]; _index++)
+                {
+                    // longNotesEndLineNumの中から対応する直近の終点ノーツを検索
+                    // num;; 5~8:ノーマルロングノーツ始点、9:スペシャルロングノーツ始点
+                    // num + 5;; 10~13:ノーマルロングノーツ終点、14:スペシャルロングノーツ終点
+                    // 例;; num = 5:ノーマルロングノーツ1始点、num + 5 = 10:ノーマルロングノーツ1終点
+                    // 譜面を作りやすくするためにlongNotesCountFlagを用意、falseならまだ通ってない判定
+                    if (!longNotesCountFlag[_index] && longNotesEndLineNum[_index] == longNotesStartLineNum[index] + 5)
+                    {
+                        // 重複させないようにlongNotesCountFlagをtrue
+                        longNotesCountFlag[_index] = true;
+                        // longNotesTimingにロングノーツの始点時間、終点時間をインデックス順に格納
+                        longNotesData[index] = new LongNotes(
+                            longNotesStartTiming[index],
+                            longNotesEndTiming[_index],
+                            longNotesStartLineNum[index]
+                        );
                         break;
                     }
                 }
@@ -324,6 +415,8 @@ public class EditController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
+                // ロングノーツの調整用に直前のノーツスピードを保管
+                float preNotesSpeed = notesSpeed;
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     notesSpeed++;
@@ -346,11 +439,18 @@ public class EditController : MonoBehaviour
                 notesSpeed = Mathf.Clamp(notesSpeed, 5.0f, 100.0f);
                 notesSpeedNumText.text = (notesSpeed / 10.0f).ToString("f1");
 
-                int _notesCount = 0;
+                int notesCount = 0;
                 foreach (NotesScript n in Notes)
                 {
-                    n.ChangeNotesSpeed((_timing[_notesCount] + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), notesSpeed);
-                    _notesCount++;
+                    n.ChangeNotesSpeed((notesData[notesCount].timing + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), notesSpeed);
+                    notesCount++;
+                }
+
+                int longNotesCount = 0;
+                foreach (LongNotesScript ln in LongNotes)
+                {
+                    ln.ChangeNotesSpeed((longNotesData[longNotesCount].startTiming + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), preNotesSpeed, notesSpeed);
+                    longNotesCount++;
                 }
 
                 int barCount = 0;
@@ -436,11 +536,18 @@ public class EditController : MonoBehaviour
                     objectOffsetText.text = (objectOffset / 100f).ToString("f2");
                 }
 
-                int _notesCount = 0;
+                int notesCount = 0;
                 foreach (NotesScript n in Notes)
                 {
-                    n.ChangeNotesSpeed((_timing[_notesCount] + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), notesSpeed);
-                    _notesCount++;
+                    n.ChangeNotesSpeed((notesData[notesCount].timing + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), notesSpeed);
+                    notesCount++;
+                }
+
+                int longNotesCount = 0;
+                foreach (LongNotesScript ln in LongNotes)
+                {
+                    ln.ChangeNotesSpeed((longNotesData[longNotesCount].startTiming + objectOffset / 1000f) - (GetMusicTime() + (bar - 1) * barTiming + startBarLineTiming), notesSpeed, notesSpeed);
+                    longNotesCount++;
                 }
 
                 int barCount = 0;
@@ -461,11 +568,18 @@ public class EditController : MonoBehaviour
         startText.gameObject.SetActive(true);
         _audioSource.Stop();
 
-        int _notesCount = 0;
+        int notesCount = 0;
         foreach (NotesScript n in Notes)
         {
-            n.RestartEdit(_timing[_notesCount] + objectOffset / 1000f, bar, startBarLineTiming, barTiming, notesSpeed);
-            _notesCount++;
+            n.RestartEdit(notesData[notesCount].timing + objectOffset / 1000f, bar, startBarLineTiming, barTiming, notesSpeed);
+            notesCount++;
+        }
+
+        int longNotesCount = 0;
+        foreach (LongNotesScript ln in LongNotes)
+        {
+            ln.RestartEdit(longNotesData[longNotesCount].startTiming + objectOffset / 1000f, bar, startBarLineTiming, barTiming, notesSpeed);
+            longNotesCount++;
         }
 
         int barCount = 0;

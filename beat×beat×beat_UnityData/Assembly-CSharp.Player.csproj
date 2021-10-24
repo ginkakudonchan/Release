@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DF76BC5F-9934-68B8-13DE-1CAEDD4914B4}</ProjectGuid>
+    <ProjectGuid>{5A157643-2F18-A0AC-545E-3F975F817728}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -69,6 +69,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\Scripts\OptionScene\ChangeScene_Option.cs" />
      <Compile Include="Assets\Scripts\NotesTimingMakeScene\CSVWriter.cs" />
+     <Compile Include="Assets\Scripts\GameScene\LongNotesScript.cs" />
      <Compile Include="Assets\Scripts\KeyConfigScene\ChangeScene_KeyConfig.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
      <Compile Include="Assets\Scripts\SelectSongScene\ChangeScene_SelectSong.cs" />
@@ -327,22 +328,22 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/USBデータ/Ultra/大学院/unity/音ゲ_ver.1.01/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/USBデータ/Ultra/大学院/unity/GitHub/Release/beat×beat×beat_UnityData/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.2.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -692,17 +693,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{EE8154EB-991C-A4A1-9B98-7F40529D5B55}</Project>
+      <Project>{437E32FD-B52C-9DA0-17BA-11E36310DED4}</Project>
       <Name>Unity.Timeline</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{C0C5963F-F82D-037E-92AF-5EC2B2C18856}</Project>
+      <Project>{A245A498-5355-4760-2679-247B03909C75}</Project>
       <Name>Unity.TextMeshPro</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{AC048115-68B2-B6DB-C483-4788C368915D}</Project>
+      <Project>{3AD484C0-AE65-33AC-17E5-311B65054B43}</Project>
       <Name>UnityEngine.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

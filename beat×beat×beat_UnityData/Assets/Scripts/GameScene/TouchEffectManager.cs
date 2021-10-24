@@ -25,6 +25,8 @@ public class TouchEffectManager : SingletonMonoBehaviour<TouchEffectManager>
     IEnumerator TouchEffect(int num, int judgeNum)
     {
         // アクティブ状態ならそのまま戻る
+        // ロングノーツのnumはショートノーツに変換させるため、num -= 5
+        if (5 <= num && num <= 9) num -= 5;
         if (_touchEffects[num].activeInHierarchy)
         {
             yield break;
