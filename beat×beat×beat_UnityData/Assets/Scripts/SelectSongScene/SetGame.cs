@@ -22,6 +22,8 @@ public class SetGame : MonoBehaviour
     private GameObject highScore;
     private Text highScoreCountText;
     public static int highScoreCount;
+    private Text optionNameText;
+    public static int optionNum;
     private Text composerText;
     public static string composerName;
 
@@ -41,12 +43,14 @@ public class SetGame : MonoBehaviour
         levelCount = 0;
         _BPMCount = 0;
         highScoreCount = 0;
+        optionNum = 0;  // 0:正規、1:ミラー、2:ランダム、3:Rランダム、4:Sランダム
         _isPlaying = false;
 
         LevelCountText = GameObject.Find("Canvas/Level/Count").GetComponent<Text>();
         BPMCountText = GameObject.Find("Canvas/BPM/Count").GetComponent<Text>();
         composerText = GameObject.Find("Canvas/Composer/Name").GetComponent<Text>();
         highScoreCountText = GameObject.Find("Canvas/HighScore/Count").GetComponent<Text>();
+        optionNameText = GameObject.Find("Canvas/NotesOption/OptionName").GetComponent<Text>();
         audioSource = GameObject.Find("GameMusic").GetComponent<AudioSource>();
 
         fileName = "";
@@ -87,10 +91,10 @@ public class SetGame : MonoBehaviour
         }
 
         // ループ処理（曲が終わったら再度再生）
-        if (_isPlaying && !audioSource.isPlaying && !delayFlag)
-        {
-            audioSource.Play();
-        }
+        if (_isPlaying && !audioSource.isPlaying && !delayFlag) audioSource.Play();
+
+        // optionNumに対応してオプション名を表示
+        SetOption(optionNum);
     }
 
     void SetGameButton()
@@ -137,19 +141,26 @@ public class SetGame : MonoBehaviour
             audioSource.Play();
             _isPlaying = true;
         }
-        else
-        {
-            Debug.Log("No Name Song Data");
-        }
+        else Debug.Log("No Name Song Data");
 
         // 曲が重ならないように遅延を入れる
         // StartCoroutine(DelayStartTime());
     }
 
+    // optionNumに対応してオプション名を表示
+    void SetOption(int num)
+    {
+        string optionName = "";
+        if (num == 0) optionName = "Original";
+        else if (num == 1) optionName = "Mirror";
+        else if (num == 2) optionName = "Ramdom";
+        else if (num == 3) optionName = "R-Random";
+        else if (num == 4) optionName = "S-Random";
+        optionNameText.text = optionName;
+    }
+
     IEnumerator DelayStartTime()
     {
-
         yield return new WaitForSeconds(0.5f);
-
     }
 }

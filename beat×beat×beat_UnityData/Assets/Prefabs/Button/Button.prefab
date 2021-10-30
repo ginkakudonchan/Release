@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 60}
+  m_SizeDelta: {x: 800, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7087232240832607511
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: db239e0e76ff8d348b5fa4ae95ecb090, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -106,8 +106,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048396822580976213}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -32, z: 0}
-  m_LocalScale: {x: 5, y: 700, z: 1}
+  m_LocalPosition: {x: 0, y: -36, z: 0}
+  m_LocalScale: {x: 5, y: 750, z: 1}
   m_Children: []
   m_Father: {fileID: 5345730353856909021}
   m_RootOrder: 2
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703f6577c99b7b94eb147c27b7456c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fileName: 
 --- !u!1 &5432550313722641389
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,8 +363,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432550313722641389}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 32, z: 0}
-  m_LocalScale: {x: 5, y: 700, z: 1}
+  m_LocalPosition: {x: 0, y: 36, z: 0}
+  m_LocalScale: {x: 5, y: 750, z: 1}
   m_Children: []
   m_Father: {fileID: 5345730353856909021}
   m_RootOrder: 1

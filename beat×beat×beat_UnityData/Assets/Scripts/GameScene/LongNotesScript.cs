@@ -11,20 +11,11 @@ public class LongNotesScript : MonoBehaviour
 
     void Update()
     {
-        if (GameController._isPlaying)
-        {
-            MoveNotes(GameController.notesSpeed);
-        }
-        else if (EditController._isPlaying)
-        {
-            MoveNotes(EditController.notesSpeed);
-        }
+        if (GameController._isPlaying) MoveNotes(GameController.notesSpeed);
+        else if (EditController._isPlaying) MoveNotes(EditController.notesSpeed);
 
         // EditMode専用の処理
-        if (!EditController._isPlaying)
-        {
-            MoveStopNotes(EditController.notesSpeed, EditController.endBarLineNum);
-        }
+        if (!EditController._isPlaying) MoveStopNotes(EditController.notesSpeed, EditController.endBarLineNum);
     }
 
     void MoveNotes(float notesSpeed)
@@ -64,14 +55,8 @@ public class LongNotesScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && bar < endBarLineNum)
         {
-            if (bar == 0)
-            {
-                this.transform.position += Vector3.down * EditController.startBarLineTiming * notesSpeed;
-            }
-            else
-            {
-                this.transform.position += Vector3.down * EditController.barTiming * notesSpeed;
-            }
+            if (bar == 0) this.transform.position += Vector3.down * EditController.startBarLineTiming * notesSpeed;
+            else this.transform.position += Vector3.down * EditController.barTiming * notesSpeed;
             bar++;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) && bar < endBarLineNum)
@@ -95,14 +80,8 @@ public class LongNotesScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && 0 < bar)
         {
-            if (bar == 1)
-            {
-                this.transform.position += Vector3.up * EditController.startBarLineTiming * notesSpeed;
-            }
-            else
-            {
-                this.transform.position += Vector3.up * EditController.barTiming * notesSpeed;
-            }
+            if (bar == 1) this.transform.position += Vector3.up * EditController.startBarLineTiming * notesSpeed;
+            else this.transform.position += Vector3.up * EditController.barTiming * notesSpeed;
             bar--;
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) && 0 < bar)

@@ -9,7 +9,7 @@ public class BarGraph : MonoBehaviour
 
     private float maxScale = 80.0f;
     private float yScale = 1.0f;
-    private float zScale = 3.0f;
+    private float zScale = 2.0f;
 
     void Start()
     {

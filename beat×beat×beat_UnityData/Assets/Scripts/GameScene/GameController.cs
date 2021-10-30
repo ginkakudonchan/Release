@@ -106,6 +106,12 @@ public class GameController : MonoBehaviour
     {
         if (TitleScene.gameSceneFlag)
         {
+            // 乱数を初期化
+            int h, m, s, seed;
+            h = System.DateTime.Now.Hour; m = System.DateTime.Now.Minute; s = System.DateTime.Now.Second;
+            seed = 3600 * h + 60 * m + s;
+            UnityEngine.Random.InitState(seed);
+
             // Pause中にリセットしても不具合無いように初期化
             Time.timeScale = 1f;
 
@@ -148,7 +154,7 @@ public class GameController : MonoBehaviour
         else
         {
             Debug.Log("No Data! Select Mode!");
-            StartCoroutine(Wait_Game());
+            StartCoroutine(Wait_Title());
         }
     }
 
@@ -157,49 +163,30 @@ public class GameController : MonoBehaviour
         if (_isPlaying)
         {
             // ポーズ中には何もしない処理
-            if (Mathf.Approximately(Time.timeScale, 0f))
-            {
-                return;
-            }
+            if (Mathf.Approximately(Time.timeScale, 0f)) return;
 
             scoreText.text = _score.ToString();
             _maxCombo = Math.Max(_maxCombo, _combo);
             maxComboText.text = _maxCombo.ToString();
 
-            if (_combo >= 10)
-            {
-                comboText.gameObject.SetActive(true);
-                comboText.text = _combo.ToString();
-            }
-            else
-            {
-                comboText.gameObject.SetActive(false);
-            }
+            if (_combo >= 10) { comboText.gameObject.SetActive(true); comboText.text = _combo.ToString(); }
+            else { comboText.gameObject.SetActive(false); }
 
             // 曲が終わったら
             if (!_audioSource.isPlaying)
             {
                 _isPlaying = false;
-                // 3秒後にリザルト画面
-                StartCoroutine(WaitFullComboEffect());
+                StartCoroutine(WaitFullComboEffect());  // 3秒後にリザルト画面
             }
 
             // 始まって数秒はノーツが安定しないので応急処置
-            if (GetMusicTime() < 5f)
-            {
-                AdjustNotes_BarLine(notesSpeed);
-            }
+            if (GetMusicTime() < 5f) { AdjustNotes_BarLine(notesSpeed); }
 
-            // キー入力 
-            CheckInput();
-            // ノーツスピード変更チェック
-            CheckNotesSpeed();
-            // 時間オフセットの変更チェック
-            CheckTimeOffset();
-            // オブジェクトオフセットの変更チェック
-            CheckObjectOffset();
-            // フルコンボチェック
-            CheckFullCombo();
+            CheckInput();   // キー入力 
+            CheckNotesSpeed();  // ノーツスピード変更チェック
+            CheckTimeOffset();  // 時間オフセットの変更チェック
+            CheckObjectOffset();    // オブジェクトオフセットの変更チェック
+            CheckFullCombo();   // フルコンボチェック
         }
     }
 
@@ -248,10 +235,7 @@ public class GameController : MonoBehaviour
         // num;; 0~3:ノーマルノーツ、4:スペシャルノーツ
         float positionX = 0.0f;
         float positionY = (notesData[notesCount].timing + objectOffset / 1000f) * notesSpeed;
-        if (0 <= num && num <= 3)
-        {
-            positionX = -6.0f + (4.0f * num);
-        }
+        if (0 <= num && num <= 3) positionX = -6.0f + (4.0f * num);
 
         GameObject Note;
         Note = Instantiate(notes[num],
@@ -271,10 +255,7 @@ public class GameController : MonoBehaviour
         // num;; 5~8:ノーマルロングノーツ、9:スペシャルロングノーツ
         float positionX = 0.0f;
         float positionY = (longNotesData[longNotesCount].startTiming + objectOffset / 1000f) * notesSpeed;
-        if (5 <= num && num <= 8)
-        {
-            positionX = -6.0f + (4.0f * (num - 5));
-        }
+        if (5 <= num && num <= 8) positionX = -6.0f + (4.0f * (num - 5));
 
         GameObject LongNote;
         LongNote = Instantiate(notes[num],
@@ -284,7 +265,7 @@ public class GameController : MonoBehaviour
         // LongNoteオブジェクトの長さを変更する、LongNoteオブジェクトは譜面によって長さが違う
         Vector3 dummy;
         dummy = LongNote.transform.localScale;
-        dummy.y = dummy.y + (longNotesData[longNotesCount].endTiming - longNotesData[longNotesCount].startTiming) * notesSpeed;
+        dummy.y = (longNotesData[longNotesCount].endTiming - longNotesData[longNotesCount].startTiming) * notesSpeed;
         LongNote.transform.localScale = dummy;
 
         LongNotesGameObject.Add(LongNote);
@@ -388,10 +369,7 @@ public class GameController : MonoBehaviour
                             k++;
                         }
                     }
-                    else
-                    {
-                        break;
-                    }
+                    else break;
                 }
             }
             // 最大コンボ数を取得
@@ -403,7 +381,7 @@ public class GameController : MonoBehaviour
             {
                 for (int _index = 0; 0 < longNotesEndTiming[_index]; _index++)
                 {
-                    // _longEndLineNumの中から対応する直近の終点ノーツを検索
+                    // 対応する直近の終点ノーツを検索
                     // num;; 5~8:ノーマルロングノーツ始点、9:スペシャルロングノーツ始点
                     // num + 5;; 10~13:ノーマルロングノーツ終点、14:スペシャルロングノーツ終点
                     // 例;; num = 5:ノーマルロングノーツ1始点、num + 5 = 10:ノーマルロングノーツ1終点
@@ -419,6 +397,178 @@ public class GameController : MonoBehaviour
                             longNotesStartLineNum[index]
                         );
                         break;
+                    }
+                }
+            }
+
+            // 譜面オプションを適用してノーツ番号を変更
+            // optionNum;; 0:正規、1:ミラー、2:ランダム、3:Rランダム、4:Sランダム
+            if (SetGame.optionNum != 0)
+            {
+                int[] notesNumList = { -1, -1, -1, -1 };
+                if (SetGame.optionNum == 1) notesNumList = new int[] { 3, 2, 1, 0 };
+                else if (SetGame.optionNum == 2)
+                {
+                    for (int index = 0; index < notesNumList.Length; index++)
+                    {
+                        // 本来はノーツが決定されるまで無限ループ、でも怖いから1000回くらいで止めとく
+                        for (int loop = 0; loop <= 1000; loop++)
+                        {
+                            int num = UnityEngine.Random.Range(0, 4);
+                            // notesNumListの中にノーツ番号が無かったら格納、既にあったらもう一回
+                            // IndexOf()はあったら1、無かったら-1を返す
+                            if (Array.IndexOf(notesNumList, num) == -1)
+                            {
+                                notesNumList[index] = num;
+                                break;
+                            }
+
+                            // 1000回やってダメならどこかおかしいはず
+                            if (loop == 1000) Debug.Log("GeneratedLongNotesError");
+                        }
+                        // Debug.Log("notesNumList[" + index + "] = " + notesNumList[index]);
+                    }
+                }
+                else if (SetGame.optionNum == 3)
+                {
+                    // Rランダムは0のノーツ番号が決まったら、後は一意に決まる
+                    // 例;; notesNumList[0] = 2なら、後は3, 0, 1
+                    int num = UnityEngine.Random.Range(0, 4);
+                    for (int index = 0; index < notesNumList.Length; index++)
+                    {
+                        notesNumList[index] = num;
+                        num++;
+                        if (4 <= num) num = 0;
+                        // Debug.Log("notesNumList[" + index + "] = " + notesNumList[index]);
+                    }
+                }
+
+                // else ifではダメ
+                // Sランダムの時、色々する
+                if (SetGame.optionNum == 4)
+                {
+                    // ロングノーツ、先にロングノーツを確定させてからショートノーツをランダム生成させる
+                    for (int index = 0; longNotesData[index].startTiming != 0; index++)
+                    {
+                        // スペシャルロングノーツ（lineNum = 9）以外は譜面変更
+                        if (longNotesData[index].lineNum != 9)
+                        {
+                            bool[] flag = new bool[4];  // ノーツが競合しないように管理するフラグ
+                            // 競合するロングノーツが無いかを検索
+                            // 探索範囲は現在更新済みのlongNotesDataインデックス、つまり0からindexまで
+                            for (int _index = 0; _index < index; _index++)
+                            {
+                                // スペシャルロングノーツ（lineNum = 9）は考える必要がない
+                                if (longNotesData[_index].lineNum != 9)
+                                {
+                                    float f1 = longNotesData[_index].startTiming, f2 = longNotesData[_index].endTiming;
+                                    float start = longNotesData[index].startTiming, end = longNotesData[index].endTiming;
+                                    // 始点と終点が競合していないかを確認
+                                    if ((f1 <= start && start <= f2) || (f1 <= end && end <= f2))
+                                    {
+                                        flag[longNotesData[_index].lineNum - 5] = true;
+                                    }
+                                }
+                            }
+
+                            // 本来はノーツが決定されるまで無限ループ、でも怖いから1000回くらいで止めとく
+                            for (int loop = 0; loop <= 1000; loop++)
+                            {
+                                int num = UnityEngine.Random.Range(0, 4);
+                                // もし、flag[num]フラグが立っていないなら、
+                                // データ競合が無いからlongNotesData[index].lineNumのノーツ番号を変更
+                                if (!flag[num])
+                                {
+                                    longNotesData[index].lineNum = num + 5;
+                                    break;
+                                }
+
+                                // 1000回やってダメならどこかおかしいはず
+                                if (loop == 1000) Debug.Log("GeneratedLongNotesError");
+                            }
+                        }
+                    }
+
+                    // ノーツデータを格納（notesData.timingが0じゃない）ときまで
+                    // 終了条件がfloatで比較をしてるけど、今のところ問題なさそう
+                    // ショートノーツ
+                    for (int index = 0; notesData[index].timing != 0; index++)
+                    {
+                        // スペシャルノーツ（lineNum = 4）以外は譜面変更
+                        if (notesData[index].lineNum != 4)
+                        {
+                            bool[] flag = new bool[4];  // ノーツが競合しないように管理するフラグ
+                            // 競合するロングノーツ、ショートノーツが無いかを検索
+                            // 探索範囲はlongNotesDataインデックス全部と、
+                            // 現在更新されているnotesDataインデックス0からindexまで
+                            // ロングノーツ
+                            for (int longIndex = 0; longNotesData[longIndex].startTiming != 0; longIndex++)
+                            {
+                                // スペシャルロングノーツ（lineNum = 9）は考える必要がない
+                                if (longNotesData[longIndex].lineNum != 9)
+                                {
+                                    float f = notesData[index].timing;
+                                    float start = longNotesData[longIndex].startTiming, end = longNotesData[longIndex].endTiming;
+                                    // 既にロングノーツが無いかを確認、あったら対応するノーツ番号のflagを立てる
+                                    if (start <= f && f <= end)
+                                    {
+                                        flag[longNotesData[longIndex].lineNum - 5] = true;
+                                    }
+                                }
+                            }
+
+                            // ショートノーツ
+                            for (int _index = 0; _index < index; _index++)
+                            {
+                                // スペシャルノーツ（lineNum = 4）は考える必要がない
+                                if (notesData[_index].lineNum != 4)
+                                {
+                                    // 既にロングノーツが無いかを確認、あったら対応するノーツ番号のflagを立てる
+                                    if (notesData[index].timing == notesData[_index].timing)
+                                    {
+                                        flag[notesData[_index].lineNum] = true;
+                                    }
+                                }
+                            }
+
+                            // 本来はノーツが決定されるまで無限ループ、でも怖いから1000回くらいで止めとく
+                            for (int loop = 0; loop <= 1000; loop++)
+                            {
+                                int num = UnityEngine.Random.Range(0, 4);
+                                // もし、flag[num]フラグが立っていないなら、
+                                // データ競合が無いからlongNotesData[index].lineNumのノーツ番号を変更
+                                if (!flag[num])
+                                {
+                                    notesData[index].lineNum = num;
+                                    break;
+                                }
+
+                                // 1000回やってダメならどこかおかしいはず
+                                if (loop == 1000) Debug.Log("GeneratedShortNotesError");
+                            }
+                        }
+                    }
+                }
+                // Sランダム以外の時、notesNumListを使って普通に格納
+                else
+                {
+                    // ノーツデータを格納（notesData.timingが0じゃない）ときまで
+                    // 終了条件がfloatで比較をしてるけど、今のところ問題なさそう
+                    // ショートノーツ
+                    for (int index = 0; notesData[index].timing != 0; index++)
+                    {
+                        // スペシャルノーツ（lineNum = 4）以外は譜面変更
+                        if (notesData[index].lineNum != 4)
+                            notesData[index].lineNum = notesNumList[notesData[index].lineNum];
+                        // Debug.Log("notesDataTiming[" + index + "] = " + notesData[index].timing);
+                        // Debug.Log("notesDataLineNum[" + index + "] = " + notesData[index].lineNum);
+                    }
+                    // ロングノーツ
+                    for (int index = 0; longNotesData[index].startTiming != 0; index++)
+                    {
+                        // スペシャルロングノーツ（lineNum = 9）以外は譜面変更
+                        if (longNotesData[index].lineNum != 9)
+                            longNotesData[index].lineNum = notesNumList[longNotesData[index].lineNum - 5] + 5;
                     }
                 }
             }
@@ -439,23 +589,15 @@ public class GameController : MonoBehaviour
     void ReadOffsetJson()
     {
         (timeOffset, objectOffset) = JsonOffset.ReadOffsetJson();
-        if (0 < timeOffset)
-        {
-            timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
-        }
-        else
-        {
-            timeOffsetText.text = (timeOffset / 100f).ToString("f2");
-        }
 
-        if (0 < objectOffset)
-        {
-            objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
-        }
-        else
-        {
-            objectOffsetText.text = (objectOffset / 100f).ToString("f2");
-        }
+        string offsetText = "";
+        if (0 < timeOffset) offsetText = "+" + (timeOffset / 100f).ToString("f2");
+        else offsetText = (timeOffset / 100f).ToString("f2");
+        timeOffsetText.text = offsetText;
+
+        if (0 < objectOffset) offsetText = "+" + (objectOffset / 100f).ToString("f2");
+        else offsetText = (objectOffset / 100f).ToString("f2");
+        objectOffsetText.text = offsetText;
     }
 
     public static float GetMusicTime()
@@ -465,30 +607,16 @@ public class GameController : MonoBehaviour
 
     void CheckInput()
     {
-        // i;; 0~3:NormalNote, 4:SpecialNote, 5~9:LongNote
-        for (int i = 0; i < 10; i++)
-        {
-            if (Input.GetKeyDown(GameUtil.GetKeyCodeByLineNum(i)))
-            {
-                // ショートノーツ
-                if (0 <= i && i <= 4)
-                {
-                    CheckJudge(i, GetMusicTime() + timeOffset / 1000f);
-                }
-                // ロングノーツ
-                else if (5 <= i && i <= 9)
-                {
-                    CheckLongJudge(i, GetMusicTime() + timeOffset / 1000f);
-                }
-            }
-        }
-        // ロングノーツ押しっぱなしの処理
+        // i;; 0~3:NormalNote, 4:SpecialNote
         for (int i = 0; i < 5; i++)
         {
-            // ロングノーツフラグが立っていたら、キーが押されているかのチェック
-            if (longNotesFlag[i])
+            // longNotesFlag[i]が立っていたら、ロングノーツの途中
+            // ロングノーツ押しっぱなしの処理
+            if (longNotesFlag[i]) CheckEndLongJudge(i, GetMusicTime() + timeOffset / 1000f);
+            else if (Input.GetKeyDown(GameUtil.GetKeyCodeByLineNum(i)))
             {
-                CheckEndLongJudge(i, GetMusicTime() + timeOffset / 1000f);
+                // ショートノーツ、ロングノーツ
+                CheckJudge(i, GetMusicTime() + timeOffset / 1000f);
             }
         }
     }
@@ -502,22 +630,10 @@ public class GameController : MonoBehaviour
             {
                 // ロングノーツの調整用に直前のノーツスピードを保管
                 float preNotesSpeed = notesSpeed;
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    notesSpeed++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    notesSpeed += 10.0f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    notesSpeed--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    notesSpeed -= 10.0f;
-                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) notesSpeed++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) notesSpeed += 10.0f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) notesSpeed--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) notesSpeed -= 10.0f;
 
                 // Mathf.Clamp: Unity独自の関数？
                 // 最小値と最大値を超えないようにできる
@@ -536,32 +652,17 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    timeOffset++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    timeOffset += 10f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    timeOffset--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    timeOffset -= 10f;
-                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) timeOffset++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) timeOffset += 10f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) timeOffset--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) timeOffset -= 10f;
 
                 timeOffset = Mathf.Clamp(timeOffset, -500f, 500f);
-                if (0 < timeOffset)
-                {
-                    timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
-                }
-                else
-                {
-                    timeOffsetText.text = (timeOffset / 100f).ToString("f2");
-                }
+                string offsetText = "";
+                if (0 < timeOffset) offsetText = "+" + (timeOffset / 100f).ToString("f2");
+                else offsetText = (timeOffset / 100f).ToString("f2");
+
+                timeOffsetText.text = offsetText;
             }
         }
     }
@@ -573,32 +674,17 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    objectOffset++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    objectOffset += 10f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    objectOffset--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    objectOffset -= 10f;
-                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) objectOffset++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) objectOffset += 10f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) objectOffset--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) objectOffset -= 10f;
 
                 objectOffset = Mathf.Clamp(objectOffset, -500f, 500f);
-                if (0 < objectOffset)
-                {
-                    objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
-                }
-                else
-                {
-                    objectOffsetText.text = (objectOffset / 100f).ToString("f2");
-                }
+                string offsetText = "";
+                if (0 < objectOffset) offsetText = "+" + (objectOffset / 100f).ToString("f2");
+                else offsetText = (objectOffset / 100f).ToString("f2");
+
+                objectOffsetText.text = offsetText;
 
                 AdjustNotes_BarLine(notesSpeed);
             }
@@ -637,33 +723,40 @@ public class GameController : MonoBehaviour
     {
         float minDiff = -1;
         int minDiffIndex = -1;
-        // 基準に対して早遅のチェック
-        bool earlyFlag, lateFlag;
+        bool longFlag = false;
 
-        for (int i = 0; i < notesData.Length; i++)  // ここ注意、普通に怪しい
+        // 直近にあるノーツがショートノーツかロングノーツかを判別
+        // ショートノーツ
+        for (int i = 0; i < notesData.Length; i++)
         {
             if (notesData[i].timing > 0 && notesData[i].lineNum == num)
             {
                 float diff = Math.Abs(notesData[i].timing - timing);
-                if (minDiff == -1 || minDiff > diff)
-                {
-                    minDiff = diff;
-                    minDiffIndex = i;
-                }
+                if (minDiff == -1 || minDiff > diff) { minDiff = diff; minDiffIndex = i; }
+            }
+        }
+        // ロングノーツ
+        for (int i = 0; i < longNotesData.Length; i++)
+        {
+            if (longNotesData[i].startTiming > 0 && longNotesData[i].lineNum == num + 5)
+            {
+                float diff = Math.Abs(longNotesData[i].startTiming - timing);
+                if (minDiff == -1 || minDiff > diff) { longFlag = true; minDiff = diff; minDiffIndex = i; }
             }
         }
 
+        // longFlagで直近にあるノーツがショートノーツかロングノーツかを判別
+        if (longFlag) CheckLongJudge(num, timing, minDiff, minDiffIndex);
+        else CheckShortJudge(num, timing, minDiff, minDiffIndex);
+    }
+
+    void CheckShortJudge(int num, float timing, float minDiff, int minDiffIndex)
+    {
+        bool earlyFlag, lateFlag;   // 基準に対して早遅のチェック
+
         // EarlyかLateか判定
-        if (minDiff != -1 && notesData[minDiffIndex].timing - timing >= 0)
-        {
-            earlyFlag = true;
-            lateFlag = false;
-        }
-        else
-        {
-            earlyFlag = false;
-            lateFlag = true;
-        }
+        if (minDiff != -1 && notesData[minDiffIndex].timing - timing >= 0) { earlyFlag = true; lateFlag = false; }
+        else { earlyFlag = false; lateFlag = true; }
 
         // count;; 0:missEarly, 1:goodEarly, 2:greatEarly, 3:perfect, 4:greatLate, 5:goodLate, 6:missLate
         // 空打ちじゃなければノーツを消去
@@ -681,101 +774,45 @@ public class GameController : MonoBehaviour
             }
             else if (minDiff < greatRange)
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[2]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[4]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[2]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[4]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Great!");
                 GreatTimingFunc(num);
             }
             else if (minDiff < goodRange)
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[1]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[5]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[1]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[5]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Good!");
                 GoodTimingFunc(num);
             }
             else
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[0]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[6]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[0]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[6]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Miss!");
                 MissTimingFunc(num);
             }
         }
-        else
-        {
-            // Debug.Log("through");
-            AirTimingFunc(num);
-        }
+        else AirTimingFunc(num);    // Debug.Log("through");
     }
 
-    void CheckLongJudge(int num, float timing)
+    void CheckLongJudge(int num, float timing, float minDiff, int minDiffIndex)
     {
-        float minDiff = -1;
-        int minDiffIndex = -1;  // ロングノーツ始点用
-        // 基準に対して早遅のチェック
-        bool earlyFlag, lateFlag;
-
-        for (int i = 0; i < longNotesData.Length; i++)  // ここ注意、普通に怪しい
-        {
-            // num;; 5~8:ノーマルノーツ、9:スペシャルノーツ
-            if (longNotesData[i].startTiming > 0 && longNotesData[i].lineNum == num)
-            {
-                float diff = Math.Abs(longNotesData[i].startTiming - timing);
-                if (minDiff == -1 || minDiff > diff)
-                {
-                    minDiff = diff;
-                    minDiffIndex = i;
-                }
-            }
-        }
+        bool earlyFlag, lateFlag;   // 基準に対して早遅のチェック
 
         // EarlyかLateか判定
-        if (minDiff != -1 && longNotesData[minDiffIndex].startTiming - timing >= 0)
-        { earlyFlag = true; lateFlag = false; }
+        if (longNotesData[minDiffIndex].startTiming - timing >= 0) { earlyFlag = true; lateFlag = false; }
         else { earlyFlag = false; lateFlag = true; }
 
         // count;; 0:missEarly, 1:goodEarly, 2:greatEarly, 3:perfect, 4:greatLate, 5:goodLate, 6:missLate
         // 長押し中はノーツが消えない、途中で離したら消える
         if (minDiff != -1 && minDiff < checkRange)
         {
-            longNotesFlag[num - 5] = true;
-            longNotesIndex[num - 5] = minDiffIndex;
-            // 重複しないようにstartTimingを-1にする
-            longNotesData[minDiffIndex].startTiming = -1;
-
-            // 〇〇TimingFunc(num)に渡すためnumを減算
-            // 演出等はショートノーツを同じ(?)
-            // num;; 5~8:ノーマルロングノーツ、9:スペシャルロングノーツ
-            // num;; 0~3:ノーマルノーツ、4:スペシャルノーツ
-            // 例;; num = 5:ノーマルロングノーツ1、num - 5 = 0:ノーマルノーツ1
-            num -= 5;
+            longNotesFlag[num] = true; longNotesIndex[num] = minDiffIndex;
 
             if (minDiff < perfectRange)
             {
@@ -783,54 +820,34 @@ public class GameController : MonoBehaviour
 
                 // Debug.Log("Perfect!");
                 PerfectTimingFunc(num);
+                LongEffectManager.Instance.PlayEffect(num, 0);  // 長押しエフェクトオン
             }
             else if (minDiff < greatRange)
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[2]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[4]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[2]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[4]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Great!");
                 GreatTimingFunc(num);
+                LongEffectManager.Instance.PlayEffect(num, 1);  // 長押しエフェクトオン
             }
             else if (minDiff < goodRange)
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[1]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[5]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[1]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[5]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Good!");
                 GoodTimingFunc(num);
+                LongEffectManager.Instance.PlayEffect(num, 1);  // 長押しエフェクトオン
             }
             else
             {
-                if (earlyFlag)
-                {
-                    JudgeDisplay.count[0]++;
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    JudgeDisplay.count[6]++;
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) { JudgeDisplay.count[0]++; EarlyDisplay(minDiff); }
+                if (lateFlag) { JudgeDisplay.count[6]++; LateDisplay(minDiff); }
 
                 // Debug.Log("Miss!");
                 MissTimingFunc(num);
+                LongEffectManager.Instance.PlayEffect(num, 2);  // 長押しエフェクトオン
             }
         }
         else
@@ -854,71 +871,34 @@ public class GameController : MonoBehaviour
             // diff < 0の時、対応するキーを押し続けていたらperfect
             if (Input.GetKey(GameUtil.GetKeyCodeByLineNum(num)))
             {
-                if (diff < 0)
-                {
-                    longNotesFlag[num] = false;
-                    LongNotesGameObject[longNotesIndex[num]].gameObject.SetActive(false);
-                    JudgeDisplay.count[3]++;
-
-                    // Debug.Log("Perfect!");
-                    PerfectTimingFunc(num);
-                }
+                if (diff < 0) { HideLongNotes(num); JudgeDisplay.count[3]++; PerfectTimingFunc(num); }  // Debug.Log("Perfect!");
             }
             // キーを離しても、判定内ならOK
             else
             {
-                longNotesFlag[num] = false;
-                LongNotesGameObject[longNotesIndex[num]].gameObject.SetActive(false);
+                HideLongNotes(num);
                 if (diff < checkRange)
                 {
                     // late判定か、perfect判定の時、perfect
                     // ロングノーツではlate判定が無い仕様
-                    if (diff < 0 || diff < perfectRange)
-                    {
-                        JudgeDisplay.count[3]++;
-
-                        // Debug.Log("Perfect!");
-                        PerfectTimingFunc(num);
-                    }
-                    else if (diff < greatRange)
-                    {
-                        JudgeDisplay.count[2]++;
-                        EarlyDisplay(diff);
-
-                        // Debug.Log("Great!");
-                        GreatTimingFunc(num);
-                    }
-                    else if (diff < goodRange)
-                    {
-                        JudgeDisplay.count[1]++;
-                        EarlyDisplay(diff);
-
-                        // Debug.Log("Good!");
-                        GoodTimingFunc(num);
-                    }
-                    else
-                    {
-                        JudgeDisplay.count[0]++;
-                        EarlyDisplay(diff);
-
-                        // Debug.Log("Miss!");
-                        MissTimingFunc(num);
-                    }
+                    if (diff < 0 || diff < perfectRange) { JudgeDisplay.count[3]++; PerfectTimingFunc(num); }   // Debug.Log("Perfect!");
+                    else if (diff < greatRange) { JudgeDisplay.count[2]++; EarlyDisplay(diff); GreatTimingFunc(num); } // Debug.Log("Great!");
+                    else if (diff < goodRange) { JudgeDisplay.count[1]++; EarlyDisplay(diff); GoodTimingFunc(num); } // Debug.Log("Good!");
+                    else { JudgeDisplay.count[0]++; EarlyDisplay(diff); MissTimingFunc(num); }   // Debug.Log("Miss!");
                 }
-
             }
         }
         // 判定時間外で、キーを離していたらearlyミス判定
-        else if (!Input.GetKey(GameUtil.GetKeyCodeByLineNum(num)))
-        {
-            longNotesFlag[num] = false;
-            LongNotesGameObject[longNotesIndex[num]].gameObject.SetActive(false);
-            JudgeDisplay.count[0]++;
-            EarlyDisplay(diff);
+        else if (!Input.GetKey(GameUtil.GetKeyCodeByLineNum(num))) { HideLongNotes(num); JudgeDisplay.count[0]++; EarlyDisplay(diff); MissTimingFunc(num); } // Debug.Log("Miss!");
+    }
 
-            // Debug.Log("Miss!");
-            MissTimingFunc(num);
-        }
+    // ロングノーツ長押し終わり周辺の処理
+    void HideLongNotes(int num)
+    {
+        longNotesFlag[num] = false;
+        LongNotesGameObject[longNotesIndex[num]].gameObject.SetActive(false);
+        longNotesData[longNotesIndex[num]].startTiming = -1;    // 重複しないようにstartTimingを-1にする
+        LongEffectManager.Instance.StopEffect(num);  // 長押しエフェクトオフ
     }
 
     void EarlyDisplay(float minDiff)
@@ -1002,49 +982,18 @@ public class GameController : MonoBehaviour
 
     private static void CheckScore_Combo()
     {
-        if (_scoreEffectLimit == 10 && 10 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(0);
-            _scoreEffectLimit = 50;
-        }
-        else if (_scoreEffectLimit == 50 && 50 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(1);
-            _scoreEffectLimit = 100;
-        }
-        else if (_scoreEffectLimit == 100 && 100 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(1);
-            _scoreEffectLimit = 500;
-        }
-        else if (_scoreEffectLimit <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(2);
-            _scoreEffectLimit += 500;
-        }
+        if (_scoreEffectLimit == 10 && 10 <= _score) { ScoreEffect.Instance.PlayEffect(0); _scoreEffectLimit = 50; }
+        else if (_scoreEffectLimit == 50 && 50 <= _score) { ScoreEffect.Instance.PlayEffect(1); _scoreEffectLimit = 100; }
+        else if (_scoreEffectLimit == 100 && 100 <= _score) { ScoreEffect.Instance.PlayEffect(1); _scoreEffectLimit = 500; }
+        else if (_scoreEffectLimit <= _score) { ScoreEffect.Instance.PlayEffect(2); _scoreEffectLimit += 500; }
 
-        if (_comboEffectLimit == 10 && 10 <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(0);
-            _comboEffectLimit = 50;
-        }
-        else if (_comboEffectLimit == 50 && 50 <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(1);
-            _comboEffectLimit = 100;
-        }
-        else if (_comboEffectLimit <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(2);
-            _comboEffectLimit += 100;
-        }
+        if (_comboEffectLimit == 10 && 10 <= _combo) { ComboEffect.Instance.PlayEffect(0); _comboEffectLimit = 50; }
+        else if (_comboEffectLimit == 50 && 50 <= _combo) { ComboEffect.Instance.PlayEffect(1); _comboEffectLimit = 100; }
+        else if (_comboEffectLimit <= _combo) { ComboEffect.Instance.PlayEffect(2); _comboEffectLimit += 100; }
     }
     void CheckFullCombo()
     {
-        if (_combo == maxNotesNum)
-        {
-            FullComboEffect.fullComboFlag = true;
-        }
+        if (_combo == maxNotesNum) FullComboEffect.fullComboFlag = true;
     }
 
     IEnumerator WaitFullComboEffect()
@@ -1072,5 +1021,12 @@ public class GameController : MonoBehaviour
         FadeScript.fadeOutFlag = true;
         yield return new WaitForSeconds(1.0f);
         ChangeScene_Game.ChangeSceneResult();
+    }
+
+    IEnumerator Wait_Title()
+    {
+        FadeScript.fadeOutFlag = true;
+        yield return new WaitForSeconds(1.0f);
+        ChangeSecne_Edit.ChangeSceneTitle();
     }
 }

@@ -1,0 +1,361 @@
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1635606673019022, "dur":1611, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673020637, "dur":2506, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1635606673023177, "dur":20, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1635606673023200, "dur":230, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1635606673023455, "dur":2785, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673026240, "dur":2, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257356, "dur":149, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257505, "dur":20, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257525, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257529, "dur":14, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257543, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257546, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257554, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257557, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257566, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257585, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673257600, "dur":2512, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1635606673024184, "dur":2086, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673026270, "dur":4654, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673030935, "dur":142, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031077, "dur":78, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031156, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031230, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031302, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031375, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031442, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031510, "dur":48, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031559, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031635, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031690, "dur":117, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031807, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031873, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673031941, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032000, "dur":248, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032248, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032312, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032372, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032429, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032495, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032548, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032607, "dur":86, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032694, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032754, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032807, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UaaLAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032863, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032913, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673032963, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033043, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033097, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033145, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033197, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033247, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033304, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033358, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033417, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033468, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033521, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033576, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033627, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673033677, "dur":337, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034015, "dur":119, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034135, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034213, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034272, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034335, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034390, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034450, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034504, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034565, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034630, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034690, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034744, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034800, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034854, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034913, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673034966, "dur":191, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035158, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035226, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035286, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035341, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035400, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035455, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035514, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035572, "dur":348, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035920, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673035983, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036045, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036099, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036152, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036203, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036263, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036314, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036367, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036419, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036474, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036527, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036587, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036645, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036702, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673036765, "dur":319, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673037092, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673038640, "dur":1835, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":1, "ts":1635606673040545, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":1, "ts":1635606673040619, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673040631, "dur":1435, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":1, "ts":1635606673042128, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":1, "ts":1635606673042195, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1635606673042208, "dur":37873, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":1, "ts":1635606673080149, "dur":177213, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673024140, "dur":2112, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673026255, "dur":4654, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673030935, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1635606673030939, "dur":77, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031019, "dur":3, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/app.info" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031023, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031080, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031142, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031193, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031261, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031311, "dur":92, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031403, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031468, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031584, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031644, "dur":92, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031737, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031801, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031860, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031909, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673031983, "dur":182, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032166, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032245, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032303, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032363, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032417, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032473, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032525, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032582, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032637, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032701, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673032758, "dur":509, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033267, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033327, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033387, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033444, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033497, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033556, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033611, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033663, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033719, "dur":134, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033854, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673033951, "dur":78, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034030, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034099, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034153, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034217, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034270, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034342, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034399, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034455, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034508, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034566, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034629, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034684, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034741, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034795, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034846, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034905, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673034955, "dur":186, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035142, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035209, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035268, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035321, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035387, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035445, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035501, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035551, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035607, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035657, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035718, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035779, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035835, "dur":49, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035885, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035934, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673035997, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036060, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036116, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036177, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036239, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036298, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036351, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036408, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036464, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036523, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036576, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036637, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036688, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036744, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036798, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":2, "ts":1635606673036879, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673037993, "dur":3395, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":2, "ts":1635606673041460, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673041544, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673041570, "dur":5937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673047601, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673047686, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673047700, "dur":4695, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673052469, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673052542, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673052556, "dur":2861, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673055510, "dur":125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level6" }}
+,{ "pid":12345, "tid":2, "ts":1635606673055646, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673055657, "dur":1945, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level6" }}
+,{ "pid":12345, "tid":2, "ts":1635606673057678, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level4.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673057754, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673057767, "dur":2268, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level4.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673060110, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level3" }}
+,{ "pid":12345, "tid":2, "ts":1635606673060192, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673060204, "dur":3435, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level3" }}
+,{ "pid":12345, "tid":2, "ts":1635606673063732, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level2" }}
+,{ "pid":12345, "tid":2, "ts":1635606673063815, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673063829, "dur":2621, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level2" }}
+,{ "pid":12345, "tid":2, "ts":1635606673066520, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level0.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673066597, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673066621, "dur":1555, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level0.resS" }}
+,{ "pid":12345, "tid":2, "ts":1635606673068246, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673068318, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673068331, "dur":1620, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":2, "ts":1635606673070016, "dur":298, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/boot.config" }}
+,{ "pid":12345, "tid":2, "ts":1635606673070316, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1635606673070389, "dur":186974, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673024173, "dur":2089, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673026262, "dur":4670, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673030935, "dur":128, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031063, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031116, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031179, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031232, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031292, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031344, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031420, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031479, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031546, "dur":60, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031607, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031668, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031723, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat.exe" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031794, "dur":55, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031850, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031909, "dur":67, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673031977, "dur":233, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032211, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032273, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032334, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032385, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032444, "dur":57, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032502, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032555, "dur":47, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673032603, "dur":1708, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034312, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034375, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034438, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034492, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034549, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034601, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034660, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034712, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034768, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034819, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034880, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034932, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673034987, "dur":164, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035153, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035226, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035277, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035329, "dur":425, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035755, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035817, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035869, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":3, "ts":1635606673035930, "dur":1210, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673037141, "dur":234, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":3, "ts":1635606673037467, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673039103, "dur":1250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":3, "ts":1635606673040422, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":3, "ts":1635606673040515, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673040529, "dur":1393, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":3, "ts":1635606673042015, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1635606673042101, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673042114, "dur":4019, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":3, "ts":1635606673046215, "dur":520, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":3, "ts":1635606673046736, "dur":97, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673046837, "dur":353, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":3, "ts":1635606673047191, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673047267, "dur":133362, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.resource" }}
+,{ "pid":12345, "tid":3, "ts":1635606673180639, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1635606673180652, "dur":76596, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/resources.resource" }}
+,{ "pid":12345, "tid":3, "ts":1635606673257314, "dur":5, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":3, "ts":1635606673257320, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673024227, "dur":2052, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673026279, "dur":4649, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673030935, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031071, "dur":84, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031156, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031230, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031302, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031374, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031438, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031504, "dur":54, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031558, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031630, "dur":95, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031726, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031806, "dur":66, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031873, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673031943, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673032006, "dur":3362, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673035369, "dur":113, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673035483, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673035538, "dur":52, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673035591, "dur":891, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036482, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036541, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036597, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036647, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036702, "dur":62, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036764, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036825, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036879, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets6.assets" }}
+,{ "pid":12345, "tid":4, "ts":1635606673036973, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673038029, "dur":2385, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets6.assets" }}
+,{ "pid":12345, "tid":4, "ts":1635606673040473, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673040591, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673040603, "dur":1499, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets3.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673042158, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673042220, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673042235, "dur":3644, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673046007, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1635606673046125, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673046141, "dur":6691, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1635606673052957, "dur":2538, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level6.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673055502, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673055518, "dur":2064, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level6.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673057673, "dur":90, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level5" }}
+,{ "pid":12345, "tid":4, "ts":1635606673057775, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673057786, "dur":2242, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level5" }}
+,{ "pid":12345, "tid":4, "ts":1635606673060098, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level4" }}
+,{ "pid":12345, "tid":4, "ts":1635606673060167, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673060179, "dur":2369, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level4" }}
+,{ "pid":12345, "tid":4, "ts":1635606673062703, "dur":106, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level2.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673062827, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673062848, "dur":2693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level2.resS" }}
+,{ "pid":12345, "tid":4, "ts":1635606673065622, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level1" }}
+,{ "pid":12345, "tid":4, "ts":1635606673065708, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673065726, "dur":1912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level1" }}
+,{ "pid":12345, "tid":4, "ts":1635606673067706, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level0" }}
+,{ "pid":12345, "tid":4, "ts":1635606673067799, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673067813, "dur":1728, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/level0" }}
+,{ "pid":12345, "tid":4, "ts":1635606673069635, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":4, "ts":1635606673069751, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1635606673069768, "dur":1737, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/USB/Ultra//unity/GitHub/Release/beatbeatbeat/beatbeatbeat_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":4, "ts":1635606673071600, "dur":185739, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1635606673373243, "dur":2186, "ph":"X", "name": "ProfilerWriteOutput" }
+,

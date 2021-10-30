@@ -16,7 +16,7 @@ public class TouchEffectManager : SingletonMonoBehaviour<TouchEffectManager>
         }
     }
 
-    // 0:S_Critical, 1:CriticalNear, 2:Error, 3:Air
+    // 0:Perfect, 1:Great_Good, 2:Miss, 3:Air
     public void PlayEffect(int num, int judgeNum)
     {
         StartCoroutine(TouchEffect(num, judgeNum));
@@ -25,12 +25,7 @@ public class TouchEffectManager : SingletonMonoBehaviour<TouchEffectManager>
     IEnumerator TouchEffect(int num, int judgeNum)
     {
         // アクティブ状態ならそのまま戻る
-        // ロングノーツのnumはショートノーツに変換させるため、num -= 5
-        if (5 <= num && num <= 9) num -= 5;
-        if (_touchEffects[num].activeInHierarchy)
-        {
-            yield break;
-        }
+        if (_touchEffects[num].activeInHierarchy) yield break;
 
         _touchEffects[num].GetComponent<Renderer>().material = _materials[judgeNum];
         _touchEffects[num].SetActive(true);

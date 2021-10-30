@@ -1,6 +1,6 @@
 ===========================================================================================
 
-       beat×beat×beat  Ver. 1.04
+       beat×beat×beat  Ver. 1.05
 
 ===========================================================================================
 
@@ -13,6 +13,7 @@
 ▼操作方法
 ▼今後やりたいこと
 ▼免責
+▼楽曲、BGM
 ▼おわりに
 ▼クレジット
 ▼更新履歴
@@ -34,11 +35,7 @@
 の譜面生成アルゴリズムを基に、1から制作した音楽ゲームです。
 
 ゲームエンジンはUnityを利用しています。
-Unityバージョン：2020.2.3f1
-
-楽曲、BGMは全て、
-『魔王魂』（https://maou.audio/）
-を使用しています。
+Unityバージョン：2021.2.0f1
 
 この作品は営利目的ではなく、私の趣味・勉強を兼ねて制作した作品です。
 また参考にしたオープンソースコードが数多くあり、該当箇所はソースコード付近にURLを記載しています。
@@ -89,7 +86,15 @@ CPU	：AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx     2.10 GHz
 （Gameモード、楽曲セレクト）
 ・Space or Enter	：決定
 ・↑ or ↓		：楽曲変更
+・F1～F5		：譜面オプション（正規、ミラー、ランダム、Rランダム、Sランダム）
 ・Esc			：モードセレクト
+※譜面オプション	：正規譜面を（1, 2, 3, 4）として説明
+※正規（Original）	：譜面を変更しない、例：（1, 2, 3, 4）
+※ミラー（Mirror）	：譜面を左右反対にする、例：（4, 3, 2, 1）
+※ランダム（Random）	：譜面をレーン単位でランダムに入れ替える、例：（3, 1, 2, 4）、（2, 4, 1, 3）
+※Rランダム（R-Random）	：譜面をレーン単位でランダムに回転させる、例：（2, 3, 4, 1）、（3, 4, 1, 2）
+※Sランダム（S-Random）	：譜面の配置を完全にランダムにする
+
 
 （Gameモード、ゲームプレイ）
 ・D or F or J or K	：ノーマルノーツ
@@ -113,6 +118,7 @@ CPU	：AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx     2.10 GHz
 （Previewモード、楽曲セレクト）
 ・・Space or Enter	：決定
 ・↑ or ↓		：楽曲変更
+・F1～F5		：譜面オプション（Previewモードでは未対応）
 ・Esc			：モードセレクト
 
 （Previewモード、プレビュー）
@@ -142,7 +148,6 @@ CPU	：AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx     2.10 GHz
 ・譜面エディタ機能実装
 ・速度変化する楽曲に対応させる
 ・クリアゲージ導入
-・ランダムなどの譜面オプション導入
 ・サバイバルモード実装
 ・自動判定調整機能実装
 
@@ -152,7 +157,34 @@ CPU	：AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx     2.10 GHz
 その点に関して何らかのトラブルが起こった場合、こちらで責任は負いかねます。ご了承ください。
 
 
-▼最後に
+▼楽曲、BGM
+
+楽曲、BGMは、
+『魔王魂』様（https://maou.audio/）、
+『TAG』様（https://www.youtube.com/channel/UCWWWLB-9fRCqgrMpl_Xtlqw）
+から使用しています。
+
+『魔王魂』様（順不同）
+・サイバー13（https://maou.audio/bgm_cyber13/）
+・雪の降る（https://maou.audio/27_yukinohuru/）
+・Burning Heart（https://maou.audio/08_burning_heart/）
+・サイバー43『Crossingt』（https://maou.audio/bgm_cyber43/）
+・still（https://maou.audio/15_still/）
+・ネオロック83『厳戒態勢』（https://maou.audio/bgm_neorock83/）
+・シャイニングスター（https://maou.audio/14_shining_star/）
+・ネオロック83『狙撃手の葛藤』（https://maou.audio/bgm_neorock81/）
+・それは蜃気楼だった（https://maou.audio/11_soreha_shinkiro_datta/）
+・ファンタジー15『駆け抜ける戦場の嵐』（https://maou.audio/bgm_fantasy15/）
+・12345（https://maou.audio/19_12345/）
+・ネオロック82『君が見ていた世界の果て』（https://maou.audio/bgm_neorock82/）
+・8bit28『バーダックマンステージ』（https://maou.audio/bgm_8bit28/）
+・煉獄セレナーデ（https://maou.audio/23_rengoku_serenade/）
+
+『TAG』様（順不同）
+・いつまでも あると思うな バンドとゲーム（https://www.youtube.com/watch?v=80Asgimw2L4&t=0s）
+
+
+▼おわりに
 
 連絡は下記メールアドレスにお願いします。
 バグ報告は重大だと判断した場合にお願いします。
@@ -177,8 +209,14 @@ CPU	：AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx     2.10 GHz
 
 ▼更新履歴
 
+10/30		Ver. 1.05	譜面オプション実装
+				UI調整
+				ロングノーツエフェクト実装
+				判定ラインがロングノーツに重なって見えない不具合を解消
+				ノーツを巻き込む不具合を解消
+				キービームが判定に対応していない不具合を解消
 10/24		Ver. 1.04	ロングノーツ実装
-				楽曲追加
+				楽曲追加（いつまでも あると思うな バンドとゲーム）
 10/05				readme作成
 05/16		Ver. 1.03	楽曲追加
 				フリーズ等の重大なバグを改善

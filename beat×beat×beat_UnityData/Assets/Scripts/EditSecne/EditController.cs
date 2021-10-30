@@ -326,10 +326,7 @@ public class EditController : MonoBehaviour
                             k++;
                         }
                     }
-                    else
-                    {
-                        break;
-                    }
+                    else break;
                 }
             }
             // longNotesDataにロングノーツの始点時間、終点時間、ノーツ番号をインデックス順に格納

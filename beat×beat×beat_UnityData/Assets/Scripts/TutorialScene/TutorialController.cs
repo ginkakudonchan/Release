@@ -131,10 +131,7 @@ public class TutorialController : MonoBehaviour
         if (_isPlaying)
         {
             // ポーズ中には何もしない処理
-            if (Mathf.Approximately(Time.timeScale, 0f))
-            {
-                return;
-            }
+            if (Mathf.Approximately(Time.timeScale, 0f)) return;
 
             // 時間によって表示させるテキストを変化
             if (4.68f <= GetMusicTime() && GetMusicTime() <= 9.21f)
@@ -160,9 +157,7 @@ public class TutorialController : MonoBehaviour
                 judgeOffsetText3.gameObject.SetActive(false);
             }
             else if (15.98f < GetMusicTime() && GetMusicTime() <= 27.33f)
-            {
                 panel.gameObject.SetActive(false);
-            }
             else if (27.33f < GetMusicTime() && GetMusicTime() <= 34.12f)
             {
                 panel.gameObject.SetActive(true);
@@ -175,9 +170,7 @@ public class TutorialController : MonoBehaviour
                 judgeOffsetText3.gameObject.SetActive(false);
             }
             else if (34.12f < GetMusicTime() && GetMusicTime() <= 45.44f)
-            {
                 panel.gameObject.SetActive(false);
-            }
             else if (45.44f < GetMusicTime() && GetMusicTime() <= 54.50f)
             {
                 panel.gameObject.SetActive(true);
@@ -223,23 +216,14 @@ public class TutorialController : MonoBehaviour
                 judgeOffsetText3.gameObject.SetActive(true);
             }
             else if (72.61f < GetMusicTime())
-            {
                 panel.gameObject.SetActive(false);
-            }
 
             // スコアの更新
             scoreText.text = _score.ToString();
 
             // 10コンボ以上でコンボテキストを表示
-            if (_combo >= 10)
-            {
-                comboText.gameObject.SetActive(true);
-                comboText.text = _combo.ToString();
-            }
-            else
-            {
-                comboText.gameObject.SetActive(false);
-            }
+            if (_combo >= 10) { comboText.gameObject.SetActive(true); comboText.text = _combo.ToString(); }
+            else comboText.gameObject.SetActive(false);
 
             // 曲が終わったら
             if (!_audioSource.isPlaying)
@@ -250,10 +234,7 @@ public class TutorialController : MonoBehaviour
             }
 
             // 始まって数秒はノーツが安定しないので応急処置
-            if (GetMusicTime() < 5f)
-            {
-                AdjustNotes_BarLine();
-            }
+            if (GetMusicTime() < 5f) AdjustNotes_BarLine();
 
             // キー入力
             CheckInput();
@@ -386,23 +367,11 @@ public class TutorialController : MonoBehaviour
     void ReadOffsetJson()
     {
         (timeOffset, objectOffset) = JsonOffset.ReadOffsetJson();
-        if (0 < timeOffset)
-        {
-            timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
-        }
-        else
-        {
-            timeOffsetText.text = (timeOffset / 100f).ToString("f2");
-        }
+        if (0 < timeOffset) timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
+        else timeOffsetText.text = (timeOffset / 100f).ToString("f2");
 
-        if (0 < objectOffset)
-        {
-            objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
-        }
-        else
-        {
-            objectOffsetText.text = (objectOffset / 100f).ToString("f2");
-        }
+        if (0 < objectOffset) objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
+        else objectOffsetText.text = (objectOffset / 100f).ToString("f2");
     }
 
     float GetMusicTime()
@@ -414,10 +383,7 @@ public class TutorialController : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            if (Input.GetKeyDown(GameUtil.GetKeyCodeByLineNum(i)))
-            {
-                CheckJudge(i, GetMusicTime() + timeOffset / 1000f);
-            }
+            if (Input.GetKeyDown(GameUtil.GetKeyCodeByLineNum(i))) CheckJudge(i, GetMusicTime() + timeOffset / 1000f);
         }
     }
 
@@ -428,22 +394,10 @@ public class TutorialController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    notesSpeed++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    notesSpeed += 10.0f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    notesSpeed--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    notesSpeed -= 10.0f;
-                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) notesSpeed++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) notesSpeed += 10.0f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) notesSpeed--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) notesSpeed -= 10.0f;
 
                 // Mathf.Clamp: Unity独自の関数？
                 // 最小値と最大値を超えないようにできる
@@ -462,32 +416,14 @@ public class TutorialController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    timeOffset++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    timeOffset += 10f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    timeOffset--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    timeOffset -= 10f;
-                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) timeOffset++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) timeOffset += 10f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) timeOffset--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) timeOffset -= 10f;
 
                 timeOffset = Mathf.Clamp(timeOffset, -500f, 500f);
-                if (0 < timeOffset)
-                {
-                    timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
-                }
-                else
-                {
-                    timeOffsetText.text = (timeOffset / 100f).ToString("f2");
-                }
+                if (0 < timeOffset) timeOffsetText.text = "+" + (timeOffset / 100f).ToString("f2");
+                else timeOffsetText.text = (timeOffset / 100f).ToString("f2");
             }
         }
     }
@@ -499,32 +435,13 @@ public class TutorialController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    objectOffset++;
-                }
-                if (Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    objectOffset += 10f;
-                }
-                if (Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    objectOffset--;
-                }
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    objectOffset -= 10f;
-                }
-
+                if (Input.GetKeyDown(KeyCode.UpArrow)) objectOffset++;
+                if (Input.GetKeyDown(KeyCode.RightArrow)) objectOffset += 10f;
+                if (Input.GetKeyDown(KeyCode.DownArrow)) objectOffset--;
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) objectOffset -= 10f;
                 objectOffset = Mathf.Clamp(objectOffset, -500f, 500f);
-                if (0 < objectOffset)
-                {
-                    objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
-                }
-                else
-                {
-                    objectOffsetText.text = (objectOffset / 100f).ToString("f2");
-                }
+                if (0 < objectOffset) objectOffsetText.text = "+" + (objectOffset / 100f).ToString("f2");
+                else objectOffsetText.text = (objectOffset / 100f).ToString("f2");
 
                 AdjustNotes_BarLine();
             }
@@ -560,25 +477,13 @@ public class TutorialController : MonoBehaviour
             if (_timing[i] > 0 && _lineNum[i] == num)
             {
                 float diff = Math.Abs(_timing[i] - timing);
-                if (minDiff == -1 || minDiff > diff)
-                {
-                    minDiff = diff;
-                    minDiffIndex = i;
-                }
+                if (minDiff == -1 || minDiff > diff) { minDiff = diff; minDiffIndex = i; }
             }
         }
 
         // EarlyかLateか判定
-        if (minDiff != -1 && _timing[minDiffIndex] - timing >= 0)
-        {
-            earlyFlag = true;
-            lateFlag = false;
-        }
-        else
-        {
-            earlyFlag = false;
-            lateFlag = true;
-        }
+        if (minDiff != -1 && _timing[minDiffIndex] - timing >= 0) { earlyFlag = true; lateFlag = false; }
+        else { earlyFlag = false; lateFlag = true; }
 
         // count;; 0:missEarly, 1:goodEarly, 2:greatEarly, 3:perfect, 4:greatLate, 5:goodLate, 6:missLate
         // 空打ちじゃなければノーツを消去
@@ -588,59 +493,33 @@ public class TutorialController : MonoBehaviour
             nowNotesNum++;
             NotesGameObject[minDiffIndex].gameObject.SetActive(false);
 
-            if (minDiff < perfectRange)
-            {
-                // Debug.Log("Perfect!");
-                PerfectTimingFunc(num);
-            }
+            if (minDiff < perfectRange) PerfectTimingFunc(num); // Debug.Log("Perfect!");
             else if (minDiff < greatRange)
             {
-                if (earlyFlag)
-                {
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) EarlyDisplay(minDiff);
+                if (lateFlag) LateDisplay(minDiff);
 
                 // Debug.Log("Great!");
                 GreatTimingFunc(num);
             }
             else if (minDiff < goodRange)
             {
-                if (earlyFlag)
-                {
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) EarlyDisplay(minDiff);
+                if (lateFlag) LateDisplay(minDiff);
 
                 // Debug.Log("Good!");
                 GoodTimingFunc(num);
             }
             else
             {
-                if (earlyFlag)
-                {
-                    EarlyDisplay(minDiff);
-                }
-                if (lateFlag)
-                {
-                    LateDisplay(minDiff);
-                }
+                if (earlyFlag) EarlyDisplay(minDiff);
+                if (lateFlag) LateDisplay(minDiff);
 
                 // Debug.Log("Miss!");
                 MissTimingFunc(num);
             }
         }
-        else
-        {
-            // Debug.Log("through");
-            AirTimingFunc(num);
-        }
+        else AirTimingFunc(num);    // Debug.Log("through");
     }
 
     void EarlyDisplay(float minDiff)
@@ -715,49 +594,18 @@ public class TutorialController : MonoBehaviour
 
     private static void CheckScore_Combo()
     {
-        if (_scoreEffectLimit == 10 && 10 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(0);
-            _scoreEffectLimit = 50;
-        }
-        else if (_scoreEffectLimit == 50 && 50 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(1);
-            _scoreEffectLimit = 100;
-        }
-        else if (_scoreEffectLimit == 100 && 100 <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(1);
-            _scoreEffectLimit = 500;
-        }
-        else if (_scoreEffectLimit <= _score)
-        {
-            ScoreEffect.Instance.PlayEffect(2);
-            _scoreEffectLimit += 500;
-        }
+        if (_scoreEffectLimit == 10 && 10 <= _score) { ScoreEffect.Instance.PlayEffect(0); _scoreEffectLimit = 50; }
+        else if (_scoreEffectLimit == 50 && 50 <= _score) { ScoreEffect.Instance.PlayEffect(1); _scoreEffectLimit = 100; }
+        else if (_scoreEffectLimit == 100 && 100 <= _score) { ScoreEffect.Instance.PlayEffect(1); _scoreEffectLimit = 500; }
+        else if (_scoreEffectLimit <= _score) { ScoreEffect.Instance.PlayEffect(2); _scoreEffectLimit += 500; }
 
-        if (_comboEffectLimit == 10 && 10 <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(0);
-            _comboEffectLimit = 50;
-        }
-        else if (_comboEffectLimit == 50 && 50 <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(1);
-            _comboEffectLimit = 100;
-        }
-        else if (_comboEffectLimit <= _combo)
-        {
-            ComboEffect.Instance.PlayEffect(2);
-            _comboEffectLimit += 100;
-        }
+        if (_comboEffectLimit == 10 && 10 <= _combo) { ComboEffect.Instance.PlayEffect(0); _comboEffectLimit = 50; }
+        else if (_comboEffectLimit == 50 && 50 <= _combo) { ComboEffect.Instance.PlayEffect(1); _comboEffectLimit = 100; }
+        else if (_comboEffectLimit <= _combo) { ComboEffect.Instance.PlayEffect(2); _comboEffectLimit += 100; }
     }
     void CheckFullCombo()
     {
-        if (_combo == maxNotesNum)
-        {
-            FullComboEffect.fullComboFlag = true;
-        }
+        if (_combo == maxNotesNum) FullComboEffect.fullComboFlag = true;
     }
 
     IEnumerator WaitFullComboEffect()
@@ -769,14 +617,7 @@ public class TutorialController : MonoBehaviour
     {
         FadeScript.fadeOutFlag = true;
         yield return new WaitForSeconds(1.0f);
-        if (!firstGameFlag)
-        {
-            ChangeScene_Tutorial.ChangeSceneKeyConfig();
-        }
-        else
-        {
-            ChangeScene_Tutorial.ChangeSceneTitle();
-        }
-
+        if (!firstGameFlag) ChangeScene_Tutorial.ChangeSceneKeyConfig();
+        else ChangeScene_Tutorial.ChangeSceneTitle();
     }
 }

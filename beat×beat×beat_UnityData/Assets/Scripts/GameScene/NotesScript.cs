@@ -8,20 +8,11 @@ public class NotesScript : MonoBehaviour
 
     void Update()
     {
-        if (GameController._isPlaying)
-        {
-            MoveNotes(GameController.notesSpeed);
-        }
-        else if (EditController._isPlaying)
-        {
-            MoveNotes(EditController.notesSpeed);
-        }
+        if (GameController._isPlaying) MoveNotes(GameController.notesSpeed);
+        else if (EditController._isPlaying) MoveNotes(EditController.notesSpeed);
 
         // EditMode専用の処理
-        if (!EditController._isPlaying)
-        {
-            MoveStopNotes(EditController.notesSpeed, EditController.endBarLineNum);
-        }
+        if (!EditController._isPlaying) MoveStopNotes(EditController.notesSpeed, EditController.endBarLineNum);
     }
 
     void MoveNotes(float notesSpeed)
